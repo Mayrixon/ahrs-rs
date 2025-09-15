@@ -52,15 +52,7 @@ impl<N: Scalar + Copy + SimdValue> Copy for Madgwick<N> {}
 impl<N: Scalar + SimdValue + Copy> Clone for Madgwick<N> {
     #[inline]
     fn clone(&self) -> Self {
-        let sample_period = self.sample_period;
-        let beta = self.beta;
-        let quat = self.quat;
-
-        Madgwick {
-            sample_period,
-            beta,
-            quat,
-        }
+        *self
     }
 }
 
@@ -272,7 +264,7 @@ impl<N: RealField + Copy> Ahrs<N> for Madgwick<N> {
     }
 
     fn update_gyro(
-        &mut self, 
+        &mut self,
         gyroscope: &Vector3<N>
     ) -> &UnitQuaternion<N> {
         let q = self.quat.as_ref();

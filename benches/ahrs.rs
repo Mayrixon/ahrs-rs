@@ -1,18 +1,19 @@
 use ahrs::{Ahrs, Madgwick, Mahony};
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
-use rand::{self, thread_rng, Rng};
+use criterion::{Criterion, criterion_group, criterion_main};
+use rand::{self, Rng, rng};
+use std::hint::black_box;
 use std::stringify;
 
 macro_rules! get_rand_n(
-  ($rng: ident, 1) => { $rng.gen(); };
-  ($rng: ident, $n: expr) => { (0..$n).map(|_n| nalgebra::Vector3::new($rng.gen(), $rng.gen(), $rng.gen())).collect::<Vec<_>>() };
+  ($rng: ident, 1) => { $rng.random(); };
+  ($rng: ident, $n: expr) => { (0..$n).map(|_n| nalgebra::Vector3::new($rng.random(), $rng.random(), $rng.random())).collect::<Vec<_>>() };
 );
 
 macro_rules! bench_ahrs(
     // boilerplate for each bench
     ($name: ident, $t: ident, $op: ident, $n: expr) => {
          fn $name(b: &mut Criterion) {
-            let mut rng = thread_rng();
+            let mut rng = rng();
             _bench_function!(b, rng, $t, $op, $n);
          }
     };

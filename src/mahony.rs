@@ -60,19 +60,7 @@ impl<N: Scalar + Copy + SimdValue> Copy for Mahony<N> {}
 impl<N: Scalar + SimdValue + Copy> Clone for Mahony<N> {
     #[inline]
     fn clone(&self) -> Self {
-        let sample_period = self.sample_period;
-        let kp = self.kp;
-        let ki = self.ki;
-        let e_int = self.e_int;
-        let quat = self.quat;
-
-        Mahony {
-            sample_period,
-            kp,
-            ki,
-            e_int,
-            quat,
-        }
+        *self
     }
 }
 

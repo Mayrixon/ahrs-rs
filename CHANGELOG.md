@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## 0.8.0 - 2025-09-15
+
+### Changed
+- Update Rust edition to 2024.
+- Update `nalgebra` to v0.34.
+- Update benchmark dependency `rand` to v0.9.
+- Update benchmark dependency `criterion` to v0.7.
+
 ## [0.7.0] - 2024-09-13
 
 ### Added

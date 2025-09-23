@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-## 0.8.0 - 2025-09-15
+## [0.8.0] - 2025-09-15
 
 ### Changed
 - Update Rust edition to 2024.
@@ -59,7 +59,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Add experimental feature `field_access` for access to filter parameters.
 - Add `no_std` support.
 
-[Unreleased]: https://github.com/jmagnuson/ahrs-rs/compare/v0.7.0...master
+[Unreleased]: https://github.com/jmagnuson/ahrs-rs/compare/v0.8.0...master
+[0.8.0]: https://github.com/jmagnuson/ahrs-rs/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/jmagnuson/ahrs-rs/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/jmagnuson/ahrs-rs/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/jmagnuson/ahrs-rs/compare/v0.4.0...v0.5.0
